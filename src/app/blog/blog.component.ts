@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class BlogComponent implements OnInit {
-
-
+	quotes: any[] =  [];
+	
 	constructor(private http: HttpClient) {
 		this.getPost();
 	}
@@ -25,8 +25,8 @@ export class BlogComponent implements OnInit {
 				'Authorization': 'Token f239a9d9afaa0acc1ce196b92c9dea58'
 			})
 		};
-		this.http.get('https://favqs.com/api/quotes',httpOptions ).subscribe((response) => {
-			console.log(response);
+		this.http.get('https://favqs.com/api/quotes',httpOptions).subscribe((data: any) => {
+			this.quotes = data.quotes;
 		});
 	}
 

@@ -1,1 +1,14 @@
-<p>blog works!</p>
+<div class="flex items-center justify-center min-h-screen">
+  <div class="rounded-xl border p-5 shadow-md w-9/12 bg-white">
+    <div class="m-10">
+      <div class="mt-4 mb-6" *ngFor="let quote of quotes">
+        <div class="mb-3 text-xl font-bold">
+          {{ quote.author }}
+        </div>
+        <div class="text-sm text-neutral-600">
+          {{ quote.body }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
